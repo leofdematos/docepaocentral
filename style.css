@@ -1,8 +1,9 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f5f0e6;
+    background: url("fundo-pao.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f5f0e6; /* fallback caso a imagem não carregue */
     color: #4e342e;
 }
 
@@ -34,6 +35,8 @@ nav a {
 section {
     padding: 20px;
     margin: 10px;
+    background-color: rgba(255, 255, 255, 0.85); /* leve fundo branco translúcido para legibilidade */
+    border-radius: 8px;
 }
 
 footer {
