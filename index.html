@@ -1,88 +1,202 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Padaria familiar em Santiago RS desde 1997, com produtos frescos todos os dias, ambiente aconchegante e sabor que traz lembranças.">
-    <meta name="keywords" content="padaria Santiago, pão caseiro, pão cacetinho, Doce Pão Central, padaria tradicional, salgados, doces, padaria familiar, padaria RS">
-    <title>Doce Pão Central | Padaria tradicional em Santiago RS</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Bakery",
-  "name": "Doce Pão Central",
-  "image": "https://docepaocentral.com.br/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Tito Beccon, 1248",
-    "addressLocality": "Santiago",
-    "addressRegion": "RS",
-    "postalCode": "97700-055",
-    "addressCountry": "BR"
-  },
-  "url": "https://docepaocentral.com.br",
-  "telephone": "+555532518466",
-  "priceRange": "R$",
-  "servesCuisine": ["Padaria", "Doces", "Lanches", "Salgados"],
-  "openingHours": "Mo-Sa 08:00-18:30",
-  "sameAs": [
-    "https://www.instagram.com/docepaocentral"
-  ]
-}
-    </script>
-</head>
-<body>
-    <header>
-        <img src="logo.png" alt="Logo Doce Pão Central" class="logo">
-        <h1>Bem-vindo à Doce Pão Central</h1>
-    </header>
-
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#cardapio">Cardápio</a>
-        <a href="#encomendas">Encomendas</a>
-        <a href="#contato">Contato</a>
-    </nav>
-
-    <section id="inicio">
-        <h2>Tradição e sabor desde 1997.</h2>
-        <p>Em breve, mais novidades por aqui! Enquanto isso, veja nossos cardápios e faça seu pedido via Whatsapp ou pelo Delivery Inbox. </p>
-    </section>
-
-    <section id="cardapio">
-        <h2>Cardápio</h2>
-        <ul>
-        <a href="https://drive.google.com/file/d/1vhh86ApOslfIwKuzz6eLFroXQc-4kxfA/view?usp=drive_link" class="invisivel">Tabela de Salgados</a>
-        <br><br>      
-        <a href="https://drive.google.com/file/d/1b0gCqaoXmHG7PsXBouX3jDL-bDz3FZK7/view?usp=sharing" class="invisivel">Tabela de Tortas</a>
-        <br><br>
-        <a href="https://drive.google.com/file/d/1Ds1a64dftUUeQozmcAxomE9Mx3_qQjGx/view?usp=sharing" class="invisivel">Tabela de Doces</a>
-        <br><br>
-        Também estamos no App:
-        <p class="inbox-link">
-        <a href="https://deliveryinbox.com.br/rs/santiago/padaria-doce-pao" target="_blank">
-        <img src="logoinbox.png" class="logo-inbox">
-        </a>
-        </p>
-    </section>
-    
-    <section id="encomendas">
-        <h2>Faça sua encomenda</h2>
-        <p>Atendimento pelo WhatsApp:</p>
-        <a href="https://wa.me/555532518466?text=Olá!%20Gostaria%20de%20fazer%20uma%20encomenda%20na%20Doce%20Pão%20Central." target="_blank" class="whatsapp-button">
-        Falar no WhatsApp</a>
-    </section>
+diff --git a/index.html b/index.html
+index 325ad2616df65edd653c1444043b58fe7f2bea25..7af042a79f5226d5296324207968c1de224687e3 100644
+--- a/index.html
++++ b/index.html
+@@ -1,88 +1,163 @@
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="description" content="Padaria familiar em Santiago RS desde 1997, com produtos frescos todos os dias, ambiente aconchegante e sabor que traz lembranças.">
+     <meta name="keywords" content="padaria Santiago, pão caseiro, pão cacetinho, Doce Pão Central, padaria tradicional, salgados, doces, padaria familiar, padaria RS">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Doce Pão Central | Padaria tradicional em Santiago RS</title>
+     <link rel="stylesheet" href="style.css">
++    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
++    <script src="app.js" defer></script>
+     <script type="application/ld+json">
+ {
+   "@context": "https://schema.org",
+   "@type": "Bakery",
+   "name": "Doce Pão Central",
+   "image": "https://docepaocentral.com.br/logo.png",
+   "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "Rua Tito Beccon, 1248",
+     "addressLocality": "Santiago",
+     "addressRegion": "RS",
+     "postalCode": "97700-055",
+     "addressCountry": "BR"
+   },
+   "url": "https://docepaocentral.com.br",
+   "telephone": "+555532518466",
+   "priceRange": "R$",
+   "servesCuisine": ["Padaria", "Doces", "Lanches", "Salgados"],
+   "openingHours": "Mo-Sa 08:00-18:30",
+   "sameAs": [
+     "https://www.instagram.com/docepaocentral"
+   ]
+ }
+     </script>
+ </head>
+ <body>
+     <header>
+         <img src="logo.png" alt="Logo Doce Pão Central" class="logo">
+         <h1>Bem-vindo à Doce Pão Central</h1>
++        <p class="subtitle">Agora com leitor de planilhas para resumir vendas de cartão por bandeira e tipo.</p>
+     </header>
  
-    <section id="contato">
-        <h2>Contato</h2>
-        <a href="http://bit.ly/44R6FEx">Rua Tito Beccon, 1248 – Santiago/RS</a>
-        <p>Telefone e WhatsApp: (55) 3251-8466</p>
-        <p>Instagram: <a href="https://www.instagram.com/docepaocentral/#"invisivel">@docepaocentral</a></p>
-
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Doce Pão Central. Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
+     <nav>
+         <a href="#inicio">Início</a>
+         <a href="#cardapio">Cardápio</a>
+         <a href="#encomendas">Encomendas</a>
++        <a href="#relatorio">Relatório TEF</a>
+         <a href="#contato">Contato</a>
+     </nav>
+ 
+-    <section id="inicio">
+-        <h2>Tradição e sabor desde 1997.</h2>
+-        <p>Em breve, mais novidades por aqui! Enquanto isso, veja nossos cardápios e faça seu pedido via Whatsapp ou pelo Delivery Inbox. </p>
+-    </section>
++    <main>
++        <section id="inicio">
++            <h2>Tradição e sabor desde 1997.</h2>
++            <p>Em breve, mais novidades por aqui! Enquanto isso, veja nossos cardápios e faça seu pedido via WhatsApp ou pelo Delivery Inbox.</p>
++        </section>
+ 
+-    <section id="cardapio">
+-        <h2>Cardápio</h2>
+-        <ul>
+-        <a href="https://drive.google.com/file/d/1vhh86ApOslfIwKuzz6eLFroXQc-4kxfA/view?usp=drive_link" class="invisivel">Tabela de Salgados</a>
+-        <br><br>      
+-        <a href="https://drive.google.com/file/d/1b0gCqaoXmHG7PsXBouX3jDL-bDz3FZK7/view?usp=sharing" class="invisivel">Tabela de Tortas</a>
+-        <br><br>
+-        <a href="https://drive.google.com/file/d/1Ds1a64dftUUeQozmcAxomE9Mx3_qQjGx/view?usp=sharing" class="invisivel">Tabela de Doces</a>
+-        <br><br>
+-        Também estamos no App:
+-        <p class="inbox-link">
+-        <a href="https://deliveryinbox.com.br/rs/santiago/padaria-doce-pao" target="_blank">
+-        <img src="logoinbox.png" class="logo-inbox">
+-        </a>
+-        </p>
+-    </section>
+-    
+-    <section id="encomendas">
+-        <h2>Faça sua encomenda</h2>
+-        <p>Atendimento pelo WhatsApp:</p>
+-        <a href="https://wa.me/555532518466?text=Olá!%20Gostaria%20de%20fazer%20uma%20encomenda%20na%20Doce%20Pão%20Central." target="_blank" class="whatsapp-button">
+-        Falar no WhatsApp</a>
+-    </section>
+- 
+-    <section id="contato">
+-        <h2>Contato</h2>
+-        <a href="http://bit.ly/44R6FEx">Rua Tito Beccon, 1248 – Santiago/RS</a>
+-        <p>Telefone e WhatsApp: (55) 3251-8466</p>
+-        <p>Instagram: <a href="https://www.instagram.com/docepaocentral/#"invisivel">@docepaocentral</a></p>
++        <section id="cardapio">
++            <h2>Cardápio</h2>
++            <div class="menu-links">
++                <a href="https://drive.google.com/file/d/1vhh86ApOslfIwKuzz6eLFroXQc-4kxfA/view?usp=drive_link" class="invisivel">Tabela de Salgados</a>
++                <a href="https://drive.google.com/file/d/1b0gCqaoXmHG7PsXBouX3jDL-bDz3FZK7/view?usp=sharing" class="invisivel">Tabela de Tortas</a>
++                <a href="https://drive.google.com/file/d/1Ds1a64dftUUeQozmcAxomE9Mx3_qQjGx/view?usp=sharing" class="invisivel">Tabela de Doces</a>
++            </div>
++            <p>Também estamos no app:</p>
++            <p class="inbox-link">
++                <a href="https://deliveryinbox.com.br/rs/santiago/padaria-doce-pao" target="_blank" rel="noreferrer">
++                    <img src="logoinbox.png" alt="Delivery Inbox" class="logo-inbox">
++                </a>
++            </p>
++        </section>
++
++        <section id="encomendas">
++            <h2>Faça sua encomenda</h2>
++            <p>Atendimento pelo WhatsApp:</p>
++            <a href="https://wa.me/555532518466?text=Olá!%20Gostaria%20de%20fazer%20uma%20encomenda%20na%20Doce%20Pão%20Central." target="_blank" rel="noreferrer" class="whatsapp-button">Falar no WhatsApp</a>
++        </section>
++
++        <section id="relatorio" class="report-section">
++            <div class="section-heading">
++                <div>
++                    <h2>Relatório diário de vendas no cartão</h2>
++                    <p>Importe o arquivo <strong>XLS, XLSX ou CSV</strong> gerado pelo DT Shop/DataChamp. O processamento acontece no próprio navegador e monta um resumo separado por <strong>bandeira</strong> e por <strong>tipo</strong> da venda.</p>
++                </div>
++                <span class="pill">Processamento local</span>
++            </div>
++
++            <div class="upload-card">
++                <label for="report-file" class="file-label">Selecionar planilha</label>
++                <input id="report-file" type="file" accept=".xls,.xlsx,.csv">
++                <p class="hint">O leitor procura automaticamente colunas parecidas com <em>bandeira</em>, <em>tipo/modalidade</em>, <em>valor</em>, <em>data</em>, <em>nsu</em> e <em>autorização</em>.</p>
++                <div class="helper-list">
++                    <div>
++                        <strong>Separa por tipo:</strong>
++                        <span>Crédito, Débito e Voucher/Alimentação.</span>
++                    </div>
++                    <div>
++                        <strong>Separa por bandeira:</strong>
++                        <span>Visa, Mastercard, Elo, Banri, etc.</span>
++                    </div>
++                    <div>
++                        <strong>Mostra totais:</strong>
++                        <span>Quantidade de vendas e valor total por grupo.</span>
++                    </div>
++                </div>
++            </div>
++
++            <div id="report-status" class="status-box info">Selecione uma planilha para gerar o relatório resumido.</div>
+ 
+-    </section>
++            <div id="report-output" class="report-output hidden">
++                <div class="summary-grid" id="summary-cards"></div>
++
++                <div class="table-grid">
++                    <article class="report-card">
++                        <h3>Resumo por tipo</h3>
++                        <div id="type-summary"></div>
++                    </article>
++
++                    <article class="report-card">
++                        <h3>Resumo por bandeira</h3>
++                        <div id="brand-summary"></div>
++                    </article>
++                </div>
++
++                <article class="report-card">
++                    <h3>Detalhamento por bandeira e tipo</h3>
++                    <div id="breakdown-summary"></div>
++                </article>
++
++                <article class="report-card">
++                    <h3>Vendas lidas da planilha</h3>
++                    <div class="table-wrapper">
++                        <table>
++                            <thead>
++                                <tr>
++                                    <th>Data</th>
++                                    <th>Bandeira</th>
++                                    <th>Tipo</th>
++                                    <th>Valor</th>
++                                    <th>NSU</th>
++                                    <th>Autorização</th>
++                                </tr>
++                            </thead>
++                            <tbody id="transactions-body"></tbody>
++                        </table>
++                    </div>
++                </article>
++            </div>
++        </section>
++ 
++        <section id="contato">
++            <h2>Contato</h2>
++            <a href="http://bit.ly/44R6FEx">Rua Tito Beccon, 1248 – Santiago/RS</a>
++            <p>Telefone e WhatsApp: (55) 3251-8466</p>
++            <p>Instagram: <a href="https://www.instagram.com/docepaocentral/" class="invisivel">@docepaocentral</a></p>
++        </section>
++    </main>
+ 
+     <footer>
+         <p>&copy; 2025 Doce Pão Central. Todos os direitos reservados.</p>
+     </footer>
+ </body>
+ </html>
